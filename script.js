@@ -46,28 +46,28 @@ function createList() {
 }
 // Запускается, когда пользователь начал перетаскивать элемент
 function dragStart() {
-  console.log('Event: ', this, 'dragstart');
+  // console.log('Event: ', this, 'dragstart');
   dragStartIndex = +this.closest('li').getAttribute('data-index');
 }
 // перетаскиваемый элемент попадает в допустимую цель сброс
 function dragEnter() {
-  console.log('Event: ', this, 'dragenter');
+  // console.log('Event: ', this, 'dragenter');
   this.classList.add('over');
 }
 // перетаскиваемый элемент покидает допустимую цель сброса
 function dragLeave() {
-  console.log('Event: ', this,  'dragleave');
+  // console.log('Event: ', this,  'dragleave');
   this.classList.remove('over');
 }
 // элемент перетаскивается над допустимой целью сброса каждые несколько сотен миллисекунд 
 function dragOver(e) {
-  console.log('Event: ', this, 'dragover');
+  // console.log('Event: ', this, 'dragover');
   // preventDefault нужен для активации drop события 
   e.preventDefault();
 }
 
 function dragDrop() {
-  console.log('Event: ', this, 'drop');
+  // console.log('Event: ', this, 'drop');
   const dragEndIndex = +this.getAttribute('data-index');
   swapItems(dragStartIndex, dragEndIndex);
 
